@@ -17,8 +17,9 @@ https://github.com/roywongx/mage-bloom
 2. 扩展 `TitanForever` / 新 `MageCtl` 导出 CombatState（含 GCD、光环、冷却、target castID）；
 3. CombatState 10 Hz → DGX StateHub；
 4. `/assist` 页面（建议 + 剩余时间）；
-5. **F0：反制闭环**（玩家按 assist 键 → 一次 HID → 结果分类）；
-6. 通过后再做 PvE APL → PvP 规则 → 2 GCD 预测。
+5. **FAST LANE**（Windows 本地，30–60 Hz）：打断/驱散/保命的检测与预计算，只提示；
+6. **F0：反制闭环**（玩家按 assist 键 → 一次 HID → 结果分类）；
+7. 通过后再做 PvE APL → PvP 规则 → 2 GCD 预测。
 
 ## 必读（按顺序）
 
@@ -51,9 +52,30 @@ https://github.com/roywongx/mage-bloom
 - 与 Mac `ctlcodec` 用同一组合成 BMP 逐字段对比，全部一致才允许上线。
 - 窗口最小化/无新帧 >500 ms → `stale`，不复用旧帧。
 
+## FAST LANE（Windows 本地）
+
+- 30–60 Hz 采样；只处理打断、驱散、紧急保命；不跑 DPS。
+- 规则包由 DGX 编译/签发（版本+构建+哈希），Windows 只做白名单字段解释执行；不 eval、不热改。
+- 规则/构建/哈希不匹配 → 只提示，不发键。
+- **授权边界不变**：没有玩家 assist 键，FAST LANE 不发任何输入；F0 不提供自动打断/自动驱散。
+- 未来 `EMERGENCY_AUTO` 是独立模式，需单独权限与 F0-A/B/C 门槛，不得隐式启用。
+
+## 动态截止时间
+
+`T_remain > T_state_age + T_input_p99 + T_server + T_safety`；不满足只提示“来不及”，不发键。
+字段级 `max_age`：target.guid 200 ms、casting 80 ms、反制冷却 150 ms、GCD 100 ms、友方 debuff 200 ms、HP 150 ms、普通 DPS 2 s。
+
+## 友方与驱散
+
+- CombatState 增加 `friendlyUnits`（party1–4、raid1–40）：guid、hp、distance、validTarget、
+  `debuffs[{id,type,remain,priority,dispellable}]`。
+- 只导出有可驱散 debuff 的友方；优先级：坦克 > 治疗 > DPS；同角色按危险度+剩余排序。
+- `dispellable` 必须由当前法术书确认；施法前再次校验 debuff 仍在、GUID 未变。
+- 目标不明确只提示，不发键；不自动选友方目标。
+
 ## F0 契约
 
-- 触发：`interruptible && remain > 0.35 && cds[2139] <= 0 && gcd <= 0.2 && 距离够`。
+- 触发：`interruptible && deadline.ok && cds[2139] <= 0 && gcd <= 0.2 && 距离够`（不再用固定 0.35 s）。
 - 去重：同一 `guid + castID` 只触发一次。
 - 执行：玩家 assist 键 → 一次 HID → 300 ms 确认窗口。
 - 分类：
@@ -61,7 +83,9 @@ https://github.com/roywongx/mage-bloom
   - `inferred`：casting 消失 + 反制进冷却 + GUID 未变；
   - `unconfirmed`：300 ms 无证据（不是失败）；
   - `failed`：按原结束时间完成 / 切目标 / 反制未进冷却。
-- 指标：attempt / confirmed / inferred / unconfirmed / failed、延迟 p50/p99、误触发 0、重复按键 0。
+- 指标：attempt / confirmed / inferred / unconfirmed / failed、`T_suggest`/`T_effect`/`T_confirm` 分开统计、误触发 0、重复按键 0。
+- 实验：F0-A（DGX 10 Hz vs FAST LANE 30–60 Hz）、F0-B（多友方诅咒优先级/零错驱）、
+  F0-C（Boss 读条 + 队友驱散竞争；仲裁可解释、不重复、过期取消）。
 
 ## 实现步骤
 

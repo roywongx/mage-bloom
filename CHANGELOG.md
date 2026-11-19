@@ -2,6 +2,17 @@
 
 所有改动记录在此。格式：日期 · 类型 · 摘要 · 关联文档/Issue。
 
+## 0.1.6 — 2026-11-20（FAST LANE 双速紧急响应）
+
+### Added
+- `docs/17-低延迟紧急响应.md`：Windows FAST LANE（30–60 Hz）、DGX 规则包、动态截止时间、
+  字段级 max_age、friendlyUnits/驱散、Action Arbiter、F0-A/B/C 实验。
+
+### Changed
+- `docs/15 §5.1` 改为“FAST LANE 只提示，不自动执行”；自动紧急响应是未来独立模式。
+- `PROMPT-NEXT.md` 增加 FAST LANE、动态截止时间、友方驱散与 F0-A/B/C；F0 仍为 L2。
+- 反制触发不再用固定 `remain > 0.35`，改为 `deadline.ok`。
+
 ## 0.1.5 — 2026-11-20（Windows 拍板 + F0 契约）
 
 ### Added
