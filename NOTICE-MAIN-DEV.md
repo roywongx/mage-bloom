@@ -44,3 +44,25 @@ TitanForever：128×12 / TC01 控制块（位姿、target、casting、flags）�
 - 停止：`windows/wowcap/state.py` 独立状态层、独立 `MageCtl`、`LiuyueHook`。
 - `windows/wowctl` 保留为 Windows 单次控制 CLI；W0 继续，W1 改为“改 Liuyue 本体”。
 - 先更新 GitHub：`README.md`、`docs/00/02/06`、`PROMPT-DEV.md`、`CHANGELOG.md`，写清 fork/rewrite 路线，然后 commit + push。
+
+---
+
+## 2026-11-20 05:30 · 纠偏（第二次，明确到文件级）
+
+**你正在写的 `addon/MageCtl/` 属于被废止的独立 companion 路线。**
+
+立即执行：
+
+1. 删除 `addon/MageCtl/`、`tools/build_magectl_data.py`、`tools/__init__.py`（若只为它建）、`tests/test_magectl_data.py`、`tests/test_addon_static.py`（若只测 MageCtl）。
+2. 不要提交这些文件；`git status` 里它们是 `??`，直接 `rm -rf`。
+3. W1 只有一个落点：**`collector/LiuyueForever/Core/MageBloom.lua`**。
+   - 这是完整小六月 1.3.4 本体，已含 MageBloom 雏形（13.5 KB，Lua 5.1 语法通过）。
+   - 同源源码：`/home/roy/wow-addon-re/build/LiuyueForever/`。
+   - TOC 已有 `Core\MageBloom.lua`，SavedVariables 已有 `MageBloomDB`。
+4. 你要做的是扩写它：三系 APL 规则、`MB.Pick`、`MB.Export`，全部复用
+   `LF.APL.Resolve`、`LF.AuraState.Query`、`LF.SpellBook.MAGE`、`LF.SpellDurByName`、
+   `LF.Talents.Read/GuessSpec`、`LF.db`。
+5. 禁止新增第二个 addon；禁止独立 state 层；禁止 `MageCtl`。
+
+**GitHub 已由我推到 `943c976`**（`docs/22-彻底重写小六月.md`、README/PROMPT-DEV/CHANGELOG 路线段、
+collector 改为安装改版小六月、删除旧 MageProbe）。你只需在 `MageBloom.lua` 上继续，不要再重复改文档。
