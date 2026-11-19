@@ -1,3 +1,11 @@
+## 0.2.0 — 2026-11-20（路线变更：彻底重写小六月）
+
+### Changed
+- 放弃 companion/独立探针路线；改为 fork/rewrite `LiuyueForever 1.3.4`。
+- 新增 `docs/22-彻底重写小六月.md`：保留 Smart/AuraState/SpellBook/Talents/Ledger/APL，
+  替换法师 APL/决策/导出；对外仍是 `LiuyueForever`。
+- `README` / `PROMPT-DEV` 同步路线；W0 `wowctl` 保留，W1 改为改本体。
+
 # Changelog
 
 所有改动记录在此。格式：日期 · 类型 · 摘要 · 关联文档/Issue。

@@ -1,6 +1,9 @@
 # PROMPT-DEV · 正式开发（W0 优先）
 
-> 基线：`main = 3c4b745`。本轮只做 **W0**，通过验收后再做 W1；不要一次性铺开。
+> 2026-11-20 路线变更：**不再 companion/独立探针**。以 `LiuyueForever 1.3.4` 为基座 fork/rewrite，
+> 对外仍叫 `LiuyueForever`，把 MageBloom 放进本体 `Core/MageBloom.lua`。先读 `docs/22`。
+> W0（wowctl）保留；W1 改为“改 Liuyue 本体”，不再做独立 `MageCtl/state.py`。
+> 基线：`main = 3c4b745`。本轮只做 **W0**，通过验收后再做 W1。
 > 离线 REA 已完成，数据在 `data/`；当前 Windows 没有 WoW 进程，禁止启动常驻采集/agent。
 
 ---

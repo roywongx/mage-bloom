@@ -10,6 +10,12 @@
 3. 决策不可观测：选了什么、为什么选、跳过了谁，玩家和开发者都看不到；
 4. 没有回归体系：改一条规则，无法证明它比原来好。
 
+## 路线变更（2026-11-20）
+
+**不再做 companion/独立探针。** 以 `LiuyueForever 1.3.4` 为基座 **fork/rewrite**，对外仍叫 `LiuyueForever`，
+把 MageBloom 直接放进本体（`Core/MageBloom.lua`），复用它的 `Smart/AuraState/SpellBook/Talents/Ledger/APL`。
+朋友只装一份改版小六月。详见 **[docs/22](docs/22-彻底重写小六月.md)**。
+
 ## 当前状态
 
 **M0 — 设计阶段。** 本仓库当前只包含设计文档、数据字典与评审材料，没有可安装构建。
@@ -37,6 +43,7 @@
 | [15 双模态与自愈](docs/15-双模态与自愈.md) | PvE/PvP 状态机、常驻监控、R0–R5 自愈、可选自动打断 |
 | [16 Windows 采集与 F0](docs/16-Windows采集与F0.md) | WGC/DXGI/GDI、协议一致性、数据质量、反制闭环验收 |
 | [17 低延迟紧急响应](docs/17-低延迟紧急响应.md) | FAST LANE 双速架构、动态截止时间、友方驱散、F0-A/B/C |
+| [22 彻底重写小六月](docs/22-彻底重写小六月.md) | **路线变更**：fork/rewrite LiuyueForever，不再 companion |
 | [18 Windows 现状与复用边界](docs/18-Windows现状与复用边界.md) | bgcap 是炉石栈；只借模式；无游戏即无进程 |
 | [19 Windows 控制层与实施总计划](docs/19-Windows控制层与实施总计划.md) | wowctl/wowcap、REA 清单、W0–W6 施工阶段 |
 | [ADR](docs/adr/) | 架构决策记录 |
