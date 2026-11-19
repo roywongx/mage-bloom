@@ -1,6 +1,17 @@
 ﻿param([switch]$Elevated)
 $ErrorActionPreference = 'Stop'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
+
+# 如果从 360zip/临时目录运行，先复制到稳定目录再继续（提权重启时临时文件可能已被删）
+if ($PSScriptRoot -match '\\Temp\\|360zip|\\Temp') {
+    $stable = Join-Path $env:LOCALAPPDATA 'MageProbeCollector'
+    New-Item -ItemType Directory -Force -Path $stable | Out-Null
+    & robocopy $PSScriptRoot $stable /E /NFL /NDL /NJH /NJS /NP | Out-Null
+    if ($LASTEXITCODE -ge 8) { throw "复制到稳定目录失败，请先把压缩包解压到桌面再运行。" }
+    Start-Process powershell -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File',"`"$stable\install.ps1`"")
+    exit 0
+}
+
 . (Join-Path $PSScriptRoot 'common.ps1')
 
 Write-Host "========================================" -ForegroundColor Cyan

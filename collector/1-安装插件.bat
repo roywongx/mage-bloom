@@ -1,10 +1,30 @@
 @echo off
-chcp 65001 >nul
-title MageProbe 安装
+setlocal EnableExtensions
+set "SRC=%~dp0"
+set "DST=%LOCALAPPDATA%\MageProbeCollector"
+
 echo ========================================
-echo  MageProbe 只读数据收集器 - 安装
+echo  MageProbe Collector - Install
 echo ========================================
-echo.
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0install.ps1"
+echo Source: "%SRC%"
+echo Target: "%DST%"
+
+if /I "%SRC%"=="%DST%\" goto run
+
+if not exist "%DST%" mkdir "%DST%" >nul 2>&1
+robocopy "%SRC%." "%DST%" /E /NFL /NDL /NJH /NJS /NP >nul
+if errorlevel 8 goto copyfail
+
+:run
+cd /d "%DST%"
+if not exist "%DST%\install.ps1" goto copyfail
+powershell -NoProfile -ExecutionPolicy Bypass -File "%DST%\install.ps1"
 echo.
 pause
+exit /b 0
+
+:copyfail
+echo.
+echo Copy failed. Please extract the zip to Desktop first, then run again.
+pause
+exit /b 1
