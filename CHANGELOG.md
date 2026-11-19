@@ -2,6 +2,19 @@
 
 所有改动记录在此。格式：日期 · 类型 · 摘要 · 关联文档/Issue。
 
+## 0.1.5 — 2026-11-20（Windows 拍板 + F0 契约）
+
+### Added
+- `docs/15-双模态与自愈.md`：AUTO/PVE/PVP 状态机、常驻看门狗、R0–R5 自愈、自动打断边界。
+- `docs/16-Windows采集与F0.md`：WGC 优先/DXGI 备选/GDI 诊断、TC01 不改、颜色/DPI/遮挡、
+  数据质量语义、F0 反制结果分类（confirmed/inferred/unconfirmed/failed）。
+
+### Changed
+- `docs/13 §7` 从“待确认”改为拍板：Windows 采集、DGX 决策、Mac 参考基线。
+- `PROMPT-NEXT.md` 重写为 A1+F0 路线；M1 Companion 降为游戏内基线，不强行合并执行层。
+- 反制验收改为事件优先：`SPELL_INTERRUPT` → `UNIT_SPELLCAST_INTERRUPTED` → inferred；
+  超时只算 unconfirmed，不算失败。
+
 ## 0.1.4 — 2026-11-20（人类主导的智能助手）
 
 ### Added
