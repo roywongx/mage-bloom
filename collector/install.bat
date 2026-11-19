@@ -1,10 +1,10 @@
 @echo off
 setlocal EnableExtensions
 set "SRC=%~dp0"
-set "DST=%LOCALAPPDATA%\MageProbeCollector"
+set "DST=%LOCALAPPDATA%\MageBloomCollector"
 
 echo ========================================
-echo  MageProbe Collector - Install
+echo  LiuyueForever + MageBloom - Install
 echo ========================================
 echo Source: "%SRC%"
 echo Target: "%DST%"

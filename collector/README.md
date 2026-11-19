@@ -1,31 +1,24 @@
-# MageProbe 傻瓜收集包
+# 改版小六月（LiuyueForever + MageBloom）
 
-给朋友用的只读数据收集器：安装插件 → 玩 10–15 分钟 → `/mp dump` → `/reload` → 打包回传。
+完整的小六月 1.3.4 + `Core/MageBloom.lua`，对外仍是 `LiuyueForever`。
+朋友不需要另装小六月；安装脚本会备份原版、移走旧探针，再装这一份。
 
-## 包内容
+## 内容
 
 ```
-1-安装插件.bat      自动找 _forever_，复制 MageProbe 到 Interface\AddOns
-install.bat         同上（ASCII 文件名，防解压乱码）
-2-打包数据.bat      找 SavedVariables\MageProbe.lua，打包到桌面
-pack.bat            同上（ASCII 文件名）
-install.ps1         安装逻辑（失败会自动请求管理员权限）
-pack.ps1            打包逻辑
-common.ps1          找游戏目录 / 找数据文件
-MageProbe/          只读插件（TOC + Lua）
-使用说明.txt        给朋友看的步骤
+LiuyueForever/            完整改版插件（含 Core/MageBloom.lua）
+1-安装插件.bat            自动找 _forever_，备份原版，移走旧探针，安装改版
+2-打包数据.bat            找 SavedVariables\MageBloomDB.lua，打包到桌面
+install.ps1 / pack.ps1
+common.ps1
+使用说明.txt
+发给朋友.txt
 ```
 
-## 编码/临时目录
+## MageBloom 模块
 
-两个 .bat 内容为纯 ASCII（中文只在 txt/ps1），并会先把自己复制到
-`%LOCALAPPDATA%\MageProbeCollector` 再运行，因此从 360zip 临时目录双击也能工作。
-
-## 只读声明
-
-插件只调用公开只读 API；不施法、不按键、不自动操作、不改设置。
-收集内容写入 `WTF\Account\*\SavedVariables\MageProbe.lua`，由 `2-打包数据.bat` 打成 zip。
-
-## 开发者
-
-源码在仓库 `collector/`；`MageProbe.lua` 可直接用 `luaparse` 做 Lua 5.1 语法检查。
+- 复用 `LF.APL` / `LF.AuraState` / `LF.SpellBook` / `LF.SpellDurByName` / `LF.Talents` / `LF.Smart`
+- 接管 MAGE 的 `EffectiveChain` / `PickIndex`（仅法师）
+- 导出 `MageBloomDB`：法术书、持续期、天赋、APL、配置、自身光环
+- 不注册 CLEU、不读敌方光环、不碰 secret value
+- `/mb dump` 手动导出；`/reload` 落盘

@@ -7,3 +7,6 @@ __pycache__/
 .luacheckcache
 .vscode/
 .idea/
+
+# 改版小六月整包（19MB 素材/语音），分发走 dist zip，不入 git
+collector/LiuyueForever/

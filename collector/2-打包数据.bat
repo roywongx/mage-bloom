@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableExtensions
 set "SRC=%~dp0"
-set "DST=%LOCALAPPDATA%\MageProbeCollector"
+set "DST=%LOCALAPPDATA%\MageBloomCollector"
 
 if /I not "%SRC%"=="%DST%\" (
   if not exist "%DST%\pack.ps1" (
