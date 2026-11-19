@@ -1,0 +1,20 @@
+{
+ "source": "SpellActivationOverlay/classes/mage.lua (Forever branch)",
+ "ids": {
+  "hot_streak_buff": 400625,
+  "hot_streak_talent": 400624,
+  "fingers_of_frost_a": 400669,
+  "fingers_of_frost_b": 400670,
+  "fingers_of_frost_talent": 400647,
+  "missile_barrage_buff": 400589,
+  "missile_barrage_talent": 400588,
+  "arcane_blast_buff": 400573,
+  "ice_barrier_buff": 1326891,
+  "freeze_anchor": 5276
+ },
+ "conflicts": [
+  "400669 vs 400670 both named 寒冰指 in client; listen to both.",
+  "1326891 client name is 极寒之力, likely Ice Barrier buff.",
+  "22959 client name is 痛苦诅咒, not Fire Vulnerability."
+ ]
+}

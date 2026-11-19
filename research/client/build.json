@@ -1,0 +1,16 @@
+{
+  "client": "World of Warcraft: Forever (_forever_)",
+  "build": "1.60.1.70959",
+  "build_date": "Nov 13 2026",
+  "interface": 16001,
+  "probe": "MageProbe 0.1.0",
+  "character_level_estimate": "36-37",
+  "known_spells": 46,
+  "api_notes": {
+    "C_UnitAuras": "used by probe",
+    "C_Spell": "GetSpellInfo/GetSpellCooldown/GetSpellCharges/IsSpellUsable present",
+    "UnitCastingInfo": "castID + notInterruptible observed",
+    "CLEU": "registered; combat verification pending"
+  },
+  "pending": ["talent API", "freeze/aura id conflict", "fire vulnerability id", "ice lance cooldown", "CLEU in combat", "WGC color/DPI"]
+}

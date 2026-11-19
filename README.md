@@ -39,6 +39,13 @@
 | [17 低延迟紧急响应](docs/17-低延迟紧急响应.md) | FAST LANE 双速架构、动态截止时间、友方驱散、F0-A/B/C |
 | [ADR](docs/adr/) | 架构决策记录 |
 
+## 数据与 REA 材料
+
+- [`data/`](data/)：离线 REA 的机器可读数据——法师全 rank 表（62 个技能）、客户端探针（148 技能 / 46 已学）、
+  触发 ID、小六月数据审计表、TitanForever 控制帧、SAO 触发、阈值。
+- [`research/`](research/)：REA 索引、Windows 现状、客户端 build/API、 小六月版本线。
+- [`tools/extract_data.py`](tools/extract_data.py)：可复现的提取脚本（`REA_SRC=... python3 tools/extract_data.py`）。
+
 ## 五条设计原则
 
 1. **观测 / 决策 / 执行三层分离。** 决策是纯函数：同一状态快照必然得到同一建议，可在测试里复现。

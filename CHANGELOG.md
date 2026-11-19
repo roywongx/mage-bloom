@@ -2,6 +2,18 @@
 
 所有改动记录在此。格式：日期 · 类型 · 摘要 · 关联文档/Issue。
 
+## 0.1.7 — 2026-11-20（离线 REA 数据入库）
+
+### Added
+- `data/`：客户端探针（148 技能 / 46 已学）、62 个法师技能全 rank、触发/光环、
+  小六月法师表与 APL、TitanForever 控制帧、SAO 触发、阈值。
+- `research/`：REA 索引、Windows 盘点、客户端 build/API、小六月版本线。
+- `tools/extract_data.py`：可复现提取脚本。
+
+### Notes
+- 全部为派生事实表，不含第三方插件源码；冲突与待验证项集中在 `data/README.md`。
+- 仍需游戏内验证：寒冰指 400669/400670、火焰易伤真实 ID、冰枪 CD、天赋 API、CLEU、WGC 颜色。
+
 ## 0.1.6 — 2026-11-20（FAST LANE 双速紧急响应）
 
 ### Added

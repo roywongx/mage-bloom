@@ -1,0 +1,51 @@
+{
+ "source": "wow-ah/addon-forever/TitanForever/Core.lua",
+ "block": {
+  "cols": 128,
+  "rows": 12,
+  "cell_px": 4,
+  "bytes": 4608,
+  "magic": "TC01",
+  "max_payload": 4574,
+  "crc": "CRC16-CCITT-FALSE"
+ },
+ "flags": {
+  "ahOpen": "0x0002",
+  "inCombat": "0x0004",
+  "scanOn": "0x0008",
+  "mailOpen": "0x0010",
+  "mailGm": "0x0020",
+  "throttled": "0x0040",
+  "typing": "0x0080",
+  "errors": "0x0100",
+  "paused": "0x0200",
+  "vendorOpen": "0x0400",
+  "trainerOpen": "0x0800",
+  "dead": "0x1000",
+  "resting": "0x2000"
+ },
+ "snapshot_fields": [
+  "at",
+  "uptime",
+  "money",
+  "speed",
+  "dead",
+  "counts",
+  "profession",
+  "target",
+  "casting",
+  "selected",
+  "merchant",
+  "bag_items",
+  "windows",
+  "buttons",
+  "recipes",
+  "gossip",
+  "chat_log",
+  "answer",
+  "lastAction",
+  "nameplates",
+  "mouseover"
+ ],
+ "notes": "Exact field set depends on Ctl.snapshot; see docs/13."
+}

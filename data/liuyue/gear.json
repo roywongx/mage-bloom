@@ -1,0 +1,3 @@
+{
+ "gear": "{\n            { key = \"arcane\", name = \"奥术\", nameEn = \"Arcane\",       icon = \"Interface\\\\Icons\\\\inv_misc_rune_03\" },\n            { key = \"fire\",   name = \"火焰\", nameEn = \"Fire\",         icon = \"Interface\\\\Icons\\\\spell_fire_firebolt02\" },\n            { key = \"frost\",  name = \"冰霜\", nameEn = \"Frost\",        icon = \"Interface\\\\Icons\\\\spell_frost_frostbolt02\" },\n        }"
+}

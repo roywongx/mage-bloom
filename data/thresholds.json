@@ -1,0 +1,17 @@
+{
+  "source": [
+    "ForeverDB build 1.60.1.70959 (https://foreverdb.net/class/Mage/pve)",
+    "WowSims Forever APL (ui/specs/mage/dps/apls/*.apl.json)",
+    "client probe MageProbe 1.60.1.70959"
+  ],
+  "evocation": {"generic_pct": 15, "frost_pct": 5, "arcane_pct": 10, "confidence": "inferred"},
+  "arcane_blast": {"max_stacks": 4, "duration_s": 18, "mana_stop_pct": 25, "confidence": "verified"},
+  "aoe": {"default_targets": 3, "confidence": "inferred"},
+  "heating_up": {"stacks_for_pyro": 3, "window_s": 20, "per_stack_reduction_pct": 25, "confidence": "verified"},
+  "missile_barrage": {"window_s": 15, "confidence": "inferred"},
+  "clearcasting": {"window_s": 15, "confidence": "inferred"},
+  "ice_lance": {"cooldown_s": 8, "confidence": "inferred", "note": "2026-10-29 hotfix report; verify in game"},
+  "fire_blast": {"cooldown_s": 8, "confidence": "inferred"},
+  "presence_of_mind": {"cooldown_s": 180, "confidence": "inferred"},
+  "ice_barrier": {"duration_s": 60, "absorb": 819, "frost_damage_pct": 15, "confidence": "verified"}
+}
