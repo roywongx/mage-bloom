@@ -2,6 +2,22 @@
 
 所有改动记录在此。格式：日期 · 类型 · 摘要 · 关联文档/Issue。
 
+## 0.1.8 — 2026-11-20（收集包 + 权威数据源）
+
+### Added
+- `collector/` + `dist/MageProbe-傻瓜收集包.zip`：朋友用一键安装/打包，只读插件，
+  自动找 `_forever_`、备份旧版、桌面生成回传 zip。
+- `tools/rea_web.py`：Wago DB2 CSV + Wowhead tooltip 抓取；`data/client/spell_db_mage_*.csv`、
+  `data/auras/wowhead_tooltips.json`、`data/spells/gamedata_mage_facts.json`。
+
+### Verified
+- 冰枪 CD 8s、冰盾 60s/30s、火焰易伤 22959（30s/5 层）、1326891 Frigid Power、
+  400647 天赋 / 400669+400670 buff、400625 20s/3 层、400573 18s/4 层。
+
+### Notes
+- REA MCP 已升级到 6.9.0（openCode 配置 + 全局包 + skill）。
+- 剩余仅天赋 API、CLEU、WGC 颜色需游戏内确认。
+
 ## 0.1.7 — 2026-11-20（离线 REA 数据入库）
 
 ### Added

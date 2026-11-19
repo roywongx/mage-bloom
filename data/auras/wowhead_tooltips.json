@@ -1,0 +1,151 @@
+{
+ "400647": {
+  "name": "寒冰指",
+  "icon": "ability_mage_wintersgrasp",
+  "tooltip": "<table><tr><td><a class=\"whtt-name\" href=\"/classic/cn/spell=400647/寒冰指\"><b class=\"whtt-name\">寒冰指</b></a><div class=\"wowhead-tooltip-requirements\">需要 法师</div><span class=\"wowhead-tooltip-requirements\">需要等级 1</span><br /></td></tr></table><table><tr><td><div class=\"q\">你的冰冷效果有25%的几率使你获得寒冰指效果，使你的下2次法术攻击将目标视为已被冻结的目标。持续15秒。</div></td></tr></table>",
+  "tooltip2": "",
+  "buff": "",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": 0
+ },
+ "400669": {
+  "name": "寒冰指",
+  "icon": "ability_mage_wintersgrasp",
+  "tooltip": "<table><tr><td><a class=\"whtt-name\" href=\"/classic/cn/spell=400669/寒冰指\"><b class=\"whtt-name\">寒冰指</b></a><br />瞬发<div class=\"wowhead-tooltip-requirements\">需要 法师</div><span class=\"wowhead-tooltip-requirements\">需要等级 1</span><br /></td></tr></table><table><tr><td><div class=\"q\">你的冰冷效果有一定几率使你获得寒冰指效果，使你接下来的法术攻击将目标视为已被冻结的目标。持续15秒。</div></td></tr></table>",
+  "tooltip2": "",
+  "buff": "<table><tr><td><table width=\"100%\"><tr><td><b class=\"q\">寒冰指</b></td><th class=\"q\"><b class=\"q\">魔法</b></th></tr></table></td></tr></table><table><tr><td>你的下2个冰霜法术将目标算作被冻结的目标。<br><span class=\"q\">持续15​秒</span></td></tr></table>",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": 0
+ },
+ "400670": {
+  "name": "寒冰指",
+  "icon": "ability_mage_wintersgrasp",
+  "tooltip": "<table><tr><td><a class=\"whtt-name\" href=\"/classic/cn/spell=400670/寒冰指\"><b class=\"whtt-name\">寒冰指</b></a><br />瞬发<div class=\"wowhead-tooltip-requirements\">需要 法师</div><span class=\"wowhead-tooltip-requirements\">需要等级 1</span><br /></td></tr></table><table><tr><td><div class=\"q\">你的冰冷效果有一定几率使你获得寒冰指效果，使你接下来的法术攻击将目标视为已被冻结的目标。持续15秒。</div></td></tr></table>",
+  "tooltip2": "",
+  "buff": "<table><tr><td><b class=\"q\">寒冰指</b></td></tr></table><table><tr><td>你的法术会把目标视为视为已被冻结的目标。可使用1次。<br><span class=\"q\">持续15​秒</span></td></tr></table>",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": 0
+ },
+ "22959": {
+  "name": "痛苦诅咒",
+  "icon": "spell_fire_soulburn",
+  "tooltip": "<a class=\"whtt-name\" href=\"/classic/cn/spell=22959/痛苦诅咒\"><b class=\"whtt-name\">痛苦诅咒</b></a><br />100 码范围<br />瞬发<div class=\"wowhead-tooltip-requirements\">需要 法师</div>",
+  "tooltip2": "",
+  "buff": "<table><tr><td><table width=\"100%\"><tr><td><b class=\"q\">痛苦诅咒</b></td><th class=\"q\"><b class=\"q\">魔法</b></th></tr></table></td></tr></table><table><tr><td>受到火焰攻击时承受的伤害提高3%。<br><span class=\"q\">持续30​秒</span></td></tr></table>",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": 0
+ },
+ "1326891": {
+  "error": "HTTP Error 404: Not Found"
+ },
+ "400625": {
+  "name": "炽热连击",
+  "icon": "ability_mage_hotstreak",
+  "tooltip": "<table><tr><td><a class=\"whtt-name\" href=\"/classic/cn/spell=400625/炽热连击\"><b class=\"whtt-name\">炽热连击</b></a><br />瞬发<div class=\"wowhead-tooltip-requirements\">需要 法师</div><span class=\"wowhead-tooltip-requirements\">需要等级 1</span><br /></td></tr></table><table><tr><td><div class=\"q\">当你的火球术、火焰冲击、灼烧、活动炸弹、法术火焰或霜火之箭连续打出2次法术爆击之后，有一定的几率使你在10秒内施放的下一个炎爆术变成瞬发。</div></td></tr></table>",
+  "tooltip2": "",
+  "buff": "<table><tr><td><table width=\"100%\"><tr><td><b class=\"q\">炽热连击</b></td><th class=\"q\"><b class=\"q\">魔法</b></th></tr></table></td></tr></table><table><tr><td>你的下一个炎爆术变成瞬发，消耗的法力值降低100%。<br><span class=\"q\">持续10​秒</span></td></tr></table>",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": 0
+ },
+ "400573": {
+  "name": "奥术冲击",
+  "icon": "spell_arcane_blast",
+  "tooltip": "<table><tr><td><a class=\"whtt-name\" href=\"/classic/cn/spell=400573/奥术冲击\"><b class=\"whtt-name\">奥术冲击</b></a><table width=\"100%\"><tr><td>瞬发</td><th><!--cooldownText-->3​分钟 冷却<!--cooldownText--><!--baseCooldown:3​分钟 冷却--></th></tr></table><div class=\"wowhead-tooltip-requirements\">需要 法师</div><span class=\"wowhead-tooltip-requirements\">需要等级 1</span><br /></td></tr></table><table><tr><td><div class=\"q\">释放奥术能量冲击目标，对其造成奥术伤害。你每次施放奥术冲击，你的所有其他奥术法术造成的伤害和治疗效果都会提高15%，奥术冲击的法力值消耗也会提高175%。这个效果可以叠加最多4次，持续6秒。</div></td></tr></table>",
+  "tooltip2": "",
+  "buff": "<table><tr><td><b class=\"q\">奥术冲击</b></td></tr></table><table><tr><td>除奥术冲击外的奥术法术伤害提高15%，奥术冲击的法力值消耗提高175%。<br><span class=\"q\">持续6​秒</span></td></tr></table>",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": 0
+ },
+ "400589": {
+  "name": "飞弹连射",
+  "icon": "ability_mage_missilebarrage",
+  "tooltip": "<table><tr><td><a class=\"whtt-name\" href=\"/classic/cn/spell=400589/飞弹连射\"><b class=\"whtt-name\">飞弹连射</b></a><br />瞬发<div class=\"wowhead-tooltip-requirements\">需要 法师</div><span class=\"wowhead-tooltip-requirements\">需要等级 1</span><br /></td></tr></table><table><tr><td><div class=\"q\">你的奥术冲击、火球术和寒冰箭有一定几率使下一个奥术飞弹的引导时间缩短50%，法力消耗减少100%，每两轮奥术飞弹的施放间隔变为0.5秒。</div></td></tr></table>",
+  "tooltip2": "",
+  "buff": "<table><tr><td><table width=\"100%\"><tr><td><b class=\"q\">飞弹连射</b></td><th class=\"q\"><b class=\"q\">魔法</b></th></tr></table></td></tr></table><table><tr><td>使你的下一个奥术飞弹的引导时间缩短50%，法力消耗减少100%，每0.5秒发射一次。<br><span class=\"q\">持续15​秒</span></td></tr></table>",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": 0
+ },
+ "1240047": {
+  "error": "HTTP Error 404: Not Found"
+ },
+ "13033": {
+  "name": "寒冰护体",
+  "icon": "spell_ice_lament",
+  "tooltip": "<table><tr><td><table width=\"100%\"><tr><td><a class=\"whtt-name\" href=\"/classic/cn/spell=13033/寒冰护体\"><b class=\"whtt-name\">寒冰护体</b></a></td><th><b class=\"q0\"><br>等级<!--lvl-->60</b></th></tr></table><div class=\"q0\">天赋</div>480法力值<table width=\"100%\"><tr><td>瞬发</td><th><!--cooldownText-->30​秒 冷却<!--cooldownText--><!--baseCooldown:30​秒 冷却--></th></tr></table><div class=\"wowhead-tooltip-requirements\">需要 法师</div><span class=\"wowhead-tooltip-requirements\">需要等级 58</span><br /></td></tr></table><table><tr><td><div class=\"q\">立即为你加上魔法护盾，可吸收<!--ppl13033:58:64:818:400:1-->826点伤害，持续1分钟。只要护盾存在，受保护者的施法就不会被打断。</div></td></tr></table>",
+  "tooltip2": "",
+  "buff": "<table><tr><td><table width=\"100%\"><tr><td><b class=\"q\">寒冰护体</b></td><th class=\"q\"><b class=\"q\">魔法</b></th></tr></table></td></tr></table><table><tr><td>吸收伤害。<br><span class=\"q\">持续1​分钟</span></td></tr></table>",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": -2
+ },
+ "12536": {
+  "name": "节能施法",
+  "icon": "spell_shadow_manaburn",
+  "tooltip": "<table><tr><td><a class=\"whtt-name\" href=\"/classic/cn/spell=12536/节能施法\"><b class=\"whtt-name\">节能施法</b></a><br />100 码范围<br />瞬发<div class=\"wowhead-tooltip-requirements\">需要 法师</div><span class=\"wowhead-tooltip-requirements\">需要等级 10</span><br /></td></tr></table><table><tr><td><span class=\"q\"><br /><span class=\"q1\">Modifies Power Cost -1000%：</span><br /><a href=\"/classic/cn/spell=400640\">冰枪术</a>，<a href=\"/classic/cn/spell=120\">冰锥术</a>，<a href=\"/classic/cn/spell=8492\">冰锥术</a>，<a href=\"/classic/cn/spell=10159\">冰锥术</a>，<a href=\"/classic/cn/spell=10160\">冰锥术</a>，<a href=\"/classic/cn/spell=10161\">冰锥术</a>，<a href=\"/classic/cn/spell=122\">冰霜新星</a>，<a href=\"/classic/cn/spell=865\">冰霜新星</a>，<a href=\"/classic/cn/spell=6131\">冰霜新星</a>，<a href=\"/classic/cn/spell=10230\">冰霜新星</a>，<a href=\"/classic/cn/spell=11113\">冲击波</a>，<a href=\"/classic/cn/spell=13018\">冲击波</a>，<a href=\"/classic/cn/spell=13019\">冲击波</a>，<a href=\"/classic/cn/spell=13020\">冲击波</a>，<a href=\"/classic/cn/spell=13021\">冲击波</a>，<a href=\"/classic/cn/spell=400574\">奥术冲击</a>，<a href=\"/classic/cn/spell=400610\">奥术弹幕</a>，<a href=\"/classic/cn/spell=425124\">奥术涌动</a>，<a href=\"/classic/cn/spell=5143\">奥术飞弹</a>，<a href=\"/classic/cn/spell=5144\">奥术飞弹</a>，<a href=\"/classic/cn/spell=5145\">奥术飞弹</a>，<a href=\"/classic/cn/spell=8416\">奥术飞弹</a>，<a href=\"/classic/cn/spell=8417\">奥术飞弹</a>，<a href=\"/classic/cn/spell=10211\">奥术飞弹</a>，<a href=\"/classic/cn/spell=10212\">奥术飞弹</a>，<a href=\"/classic/cn/spell=25345\">奥术飞弹</a>，<a href=\"/classic/cn/spell=116\">寒冰箭</a>，<a href=\"/classic/cn/spell=205\">寒冰箭</a>，<a href=\"/classic/cn/spell=837\">寒冰箭</a>，<a href=\"/classic/cn/spell=7322\">寒冰箭</a>，<a href=\"/classic/cn/spell=8406\">寒冰箭</a>，<a href=\"/classic/cn/spell=8407\">寒冰箭</a>，<a href=\"/classic/cn/spell=8408\">寒冰箭</a>，<a href=\"/classic/cn/spell=10179\">寒冰箭</a>，<a href=\"/classic/cn/spell=10180\">寒冰箭</a>，<a href=\"/classic/cn/spell=10181\">寒冰箭</a>，<a href=\"/classic/cn/spell=25304\">寒冰箭</a>，<a href=\"/classic/cn/spell=428878\">怨火之箭</a>，<a href=\"/classic/cn/spell=10\">暴风雪</a>，<a href=\"/classic/cn/spell=6141\">暴风雪</a>，<a href=\"/classic/cn/spell=8427\">暴风雪</a>，<a href=\"/classic/cn/spell=10185\">暴风雪</a>，<a href=\"/classic/cn/spell=10186\">暴风雪</a>，<a href=\"/classic/cn/spell=10187\">暴风雪</a>，<a href=\"/classic/cn/spell=412532\">法术冰霜箭</a>，<a href=\"/classic/cn/spell=401556\">活体烈焰</a>，<a href=\"/classic/cn/spell=401558\">活体烈焰</a>，<a href=\"/classic/cn/spell=400613\">活动炸弹</a>，<a href=\"/classic/cn/spell=2136\">火焰冲击</a>，<a href=\"/classic/cn/spell=2137\">火焰冲击</a>，<a href=\"/classic/cn/spell=2138\">火焰冲击</a>，<a href=\"/classic/cn/spell=8412\">火焰冲击</a>，<a href=\"/classic/cn/spell=8413\">火焰冲击</a>，<a href=\"/classic/cn/spell=10197\">火焰冲击</a>，<a href=\"/classic/cn/spell=10199\">火焰冲击</a>，<a href=\"/classic/cn/spell=400616\">火焰冲击</a>，<a href=\"/classic/cn/spell=400618\">火焰冲击</a>，<a href=\"/classic/cn/spell=400619\">火焰冲击</a>，<a href=\"/classic/cn/spell=400620\">火焰冲击</a>，<a href=\"/classic/cn/spell=400621\">火焰冲击</a>，<a href=\"/classic/cn/spell=400622\">火焰冲击</a>，<a href=\"/classic/cn/spell=400623\">火焰冲击</a>，<a href=\"/classic/cn/spell=461896\">火焰冲击</a>，<a href=\"/classic/cn/spell=133\">火球术</a>，<a href=\"/classic/cn/spell=143\">火球术</a>，<a href=\"/classic/cn/spell=145\">火球术</a>，<a href=\"/classic/cn/spell=3140\">火球术</a>，<a href=\"/classic/cn/spell=8400\">火球术</a>，<a href=\"/classic/cn/spell=8401\">火球术</a>，<a href=\"/classic/cn/spell=8402\">火球术</a>，<a href=\"/classic/cn/spell=10148\">火球术</a>，<a href=\"/classic/cn/spell=10149\">火球术</a>，<a href=\"/classic/cn/spell=10150\">火球术</a>，<a href=\"/classic/cn/spell=10151\">火球术</a>，<a href=\"/classic/cn/spell=25306\">火球术</a>，<a href=\"/classic/cn/spell=2948\">灼烧</a>，<a href=\"/classic/cn/spell=8444\">灼烧</a>，<a href=\"/classic/cn/spell=8445\">灼烧</a>，<a href=\"/classic/cn/spell=8446\">灼烧</a>，<a href=\"/classic/cn/spell=10205\">灼烧</a>，<a href=\"/classic/cn/spell=10206\">灼烧</a>，<a href=\"/classic/cn/spell=10207\">灼烧</a>，<a href=\"/classic/cn/spell=11366\">炎爆术</a>，<a href=\"/classic/cn/spell=12505\">炎爆术</a>，<a href=\"/classic/cn/spell=12522\">炎爆术</a>，<a href=\"/classic/cn/spell=12523\">炎爆术</a>，<a href=\"/classic/cn/spell=12524\">炎爆术</a>，<a href=\"/classic/cn/spell=12525\">炎爆术</a>，<a href=\"/classic/cn/spell=12526\">炎爆术</a>，<a href=\"/classic/cn/spell=18809\">炎爆术</a>，<a href=\"/classic/cn/spell=2120\">烈焰风暴</a>，<a href=\"/classic/cn/spell=2121\">烈焰风暴</a>，<a href=\"/classic/cn/spell=8422\">烈焰风暴</a>，<a href=\"/classic/cn/spell=8423\">烈焰风暴</a>，<a href=\"/classic/cn/spell=10215\">烈焰风暴</a>，<a href=\"/classic/cn/spell=10216\">烈焰风暴</a>，<a href=\"/classic/cn/spell=401502\">霜火之箭</a>，<a href=\"/classic/cn/spell=1449\">魔爆术</a>，<a href=\"/classic/cn/spell=8437\">魔爆术</a>，<a href=\"/classic/cn/spell=8438\">魔爆术</a>，<a href=\"/classic/cn/spell=8439\">魔爆术</a>，<a href=\"/classic/cn/spell=10201\">魔爆术</a>，<a href=\"/classic/cn/spell=10202\">魔爆术</a><br /></span></td></tr></table>",
+  "tooltip2": "",
+  "buff": "<table><tr><td><table width=\"100%\"><tr><td><b class=\"q\">节能施法</b></td><th class=\"q\"><b class=\"q\">魔法</b></th></tr></table></td></tr></table><table><tr><td>你的下一个伤害法术所消耗的法力值减少100%。<br><span class=\"q\">持续15​秒</span></td></tr></table>",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": 0
+ },
+ "12579": {
+  "name": "深冬之寒",
+  "icon": "spell_frost_chillingblast",
+  "tooltip": "<a class=\"whtt-name\" href=\"/classic/cn/spell=12579/深冬之寒\"><b class=\"whtt-name\">深冬之寒</b></a><br />100 码范围<br />瞬发<div class=\"wowhead-tooltip-requirements\">需要 法师</div><span class=\"wowhead-tooltip-requirements\">需要等级 1</span><br />",
+  "tooltip2": "",
+  "buff": "<table><tr><td><table width=\"100%\"><tr><td><b class=\"q\">深冬之寒</b></td><th class=\"q\"><b class=\"q\">魔法</b></th></tr></table></td></tr></table><table><tr><td>冰霜法术对敌人造成爆击的几率提高2%。<br><span class=\"q\">持续15​秒</span></td></tr></table>",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": 0
+ },
+ "12042": {
+  "name": "奥术强化",
+  "icon": "spell_nature_lightning",
+  "tooltip": "<table><tr><td><a class=\"whtt-name\" href=\"/classic/cn/spell=12042/奥术强化\"><b class=\"whtt-name\">奥术强化</b></a><div class=\"q0\">天赋</div><table width=\"100%\"><tr><td>瞬发</td><th><!--cooldownText-->3​分钟 冷却<!--cooldownText--><!--baseCooldown:3​分钟 冷却--></th></tr></table><div class=\"wowhead-tooltip-requirements\">需要 法师</div></td></tr></table><table><tr><td><div class=\"q\">激活之后，你的法术会造成30%的额外伤害，但同时也要消耗30%的额外法力才能施放。这个效果可以持续15秒。</div></td></tr></table>",
+  "tooltip2": "",
+  "buff": "<table><tr><td><table width=\"100%\"><tr><td><b class=\"q\">奥术强化</b></td><th class=\"q\"><b class=\"q\">魔法</b></th></tr></table></td></tr></table><table><tr><td>你的法术可以造成更高伤害，但是需要消耗更多法力值才能施放。<br><span class=\"q\">持续15​秒</span></td></tr></table>",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": -2
+ },
+ "12043": {
+  "name": "气定神闲",
+  "icon": "spell_nature_enchantarmor",
+  "tooltip": "<table><tr><td><a class=\"whtt-name\" href=\"/classic/cn/spell=12043/气定神闲\"><b class=\"whtt-name\">气定神闲</b></a><div class=\"q0\">天赋</div><table width=\"100%\"><tr><td>瞬发</td><th><!--cooldownText-->3​分钟 冷却<!--cooldownText--><!--baseCooldown:3​分钟 冷却--></th></tr></table><div class=\"wowhead-tooltip-requirements\">需要 法师</div></td></tr></table><table><tr><td><div class=\"q\">激活之后，你的下一个施法时间低于10秒的法师法术会成为瞬发法术。</div></td></tr></table>",
+  "tooltip2": "",
+  "buff": "<table><tr><td><table width=\"100%\"><tr><td><b class=\"q\">气定神闲</b></td><th class=\"q\"><b class=\"q\">魔法</b></th></tr></table></td></tr></table><table><tr><td>你的下一个施法时间低于10秒的法师法术会成为瞬发法术。</td></tr></table>",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": -2
+ },
+ "11129": {
+  "name": "燃烧",
+  "icon": "spell_fire_sealoffire",
+  "tooltip": "<table><tr><td><a class=\"whtt-name\" href=\"/classic/cn/spell=11129/燃烧\"><b class=\"whtt-name\">燃烧</b></a><div class=\"q0\">天赋</div><table width=\"100%\"><tr><td>瞬发</td><th><!--cooldownText-->3​分钟 冷却<!--cooldownText--><!--baseCooldown:3​分钟 冷却--></th></tr></table><div class=\"wowhead-tooltip-requirements\">需要 法师</div></td></tr></table><table><tr><td><div class=\"q\">激活之后，你每一次施放火焰系伤害性法术，你的该类法术的爆击几率都会提高10%。这个效果会一直持续到你使用火焰系法术造成了3次爆击。</div></td></tr></table>",
+  "tooltip2": "",
+  "buff": "",
+  "quality": -1,
+  "spells": {},
+  "buffspells": {},
+  "completion_category": -2
+ }
+}

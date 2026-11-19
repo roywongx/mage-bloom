@@ -1,0 +1,15 @@
+{
+  "source": "wowsims/gamedata spells/mage/*.txt (Forever branch)",
+  "build": "1.60.1.70959",
+  "facts": {
+    "400647": {"name": "Fingers of Frost", "role": "talent", "proc_chance_pct": 15},
+    "400669": {"name": "Fingers of Frost", "role": "buff", "duration_s": 15, "note": "next spells treat target as frozen"},
+    "400670": {"name": "Fingers of Frost", "role": "buff", "duration_s": 15, "max_stacks": 2},
+    "1240047": {"name": "Ice Lance", "cooldown_s": 8, "gcd_s": 1.5, "frozen_bonus_pct": 300},
+    "13033": {"name": "Ice Barrier", "duration_s": 60, "cooldown_s": 30, "absorb": 819, "frost_pct": 15},
+    "1326891": {"name": "Frigid Power", "duration_s": 60, "frost_pct": 15, "role": "ice_barrier_buff"},
+    "22959": {"name": "Fire Vulnerability", "duration_s": 30, "max_stacks": 5, "fire_pct_per_stack": 3, "role": "target_debuff"},
+    "400625": {"name": "Heating Up", "duration_s": 20, "max_stacks": 3, "cast_reduction_pct_per_stack": 25},
+    "400573": {"name": "Arcane Blast", "duration_s": 18, "max_stacks": 4, "int_pct": 12, "mana_increase_pct": 100}
+  }
+}

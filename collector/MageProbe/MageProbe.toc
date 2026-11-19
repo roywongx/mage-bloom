@@ -1,0 +1,9 @@
+## Interface: 16001
+## Title: MageProbe Collector
+## Notes: 只读数据收集：技能/光环/天赋/施法/事件/冷却。不会施法或按键。
+## Author: MageBloom
+## Version: 0.2.0
+## SavedVariables: MageProbeDB
+## X-Category: Combat
+
+MageProbe.lua

@@ -41,6 +41,12 @@
 | [19 Windows 控制层与实施总计划](docs/19-Windows控制层与实施总计划.md) | wowctl/wowcap、REA 清单、W0–W6 施工阶段 |
 | [ADR](docs/adr/) | 架构决策记录 |
 
+## 给朋友用的收集包
+
+- [`collector/`](collector/)：MageProbe 只读收集器源码 + 一键安装/打包脚本。
+- [`dist/MageProbe-傻瓜收集包.zip`](dist/MageProbe-傻瓜收集包.zip)：`1-安装插件.bat` → 玩 → `/mp dump` → `/reload` → `2-打包数据.bat`，
+  桌面生成 zip 回传。安装脚本已在 Windows 实测通过（自动找 `_forever_`、备份旧版）。
+
 ## 数据与 REA 材料
 
 - [`data/`](data/)：离线 REA 的机器可读数据——法师全 rank 表（62 个技能）、客户端探针（148 技能 / 46 已学）、
