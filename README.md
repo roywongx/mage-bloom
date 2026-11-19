@@ -37,6 +37,8 @@
 | [15 双模态与自愈](docs/15-双模态与自愈.md) | PvE/PvP 状态机、常驻监控、R0–R5 自愈、可选自动打断 |
 | [16 Windows 采集与 F0](docs/16-Windows采集与F0.md) | WGC/DXGI/GDI、协议一致性、数据质量、反制闭环验收 |
 | [17 低延迟紧急响应](docs/17-低延迟紧急响应.md) | FAST LANE 双速架构、动态截止时间、友方驱散、F0-A/B/C |
+| [18 Windows 现状与复用边界](docs/18-Windows现状与复用边界.md) | bgcap 是炉石栈；只借模式；无游戏即无进程 |
+| [19 Windows 控制层与实施总计划](docs/19-Windows控制层与实施总计划.md) | wowctl/wowcap、REA 清单、W0–W6 施工阶段 |
 | [ADR](docs/adr/) | 架构决策记录 |
 
 ## 数据与 REA 材料
