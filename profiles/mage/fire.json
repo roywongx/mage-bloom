@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "class": "MAGE",
+  "spec": "FIRE",
+  "game_build": "1.60.1.70959",
+  "meta": {
+    "name": "火焰 · 热力迸发炎爆",
+    "source": {
+      "apl": "wowsims/forever@9d028f3 ui/specs/mage/dps/apls/deepFire.apl.json",
+      "notes": "https://tellmenext.cc/zh/forever/mage-fire/",
+      "db": "foreverdb.net build 1.60.1.70959"
+    },
+    "updated_at": "2026-11-20",
+    "confidence": "draft"
+  },
+  "rules": [
+    { "id": "fire.interrupt", "spell": "法术反制", "target": true, "interrupt": true, "config": "interrupt" },
+    { "id": "fire.evo", "spell": "唤醒", "manaPctBelow": 15, "notChanneling": true },
+    { "id": "fire.block", "spell": "寒冰屏障", "hpPctBelow": 25, "config": "defensive" },
+    { "id": "fire.pyro.hs", "spell": "炎爆术", "target": true, "buff": { "id": 400625, "name": "热力迸发", "minStacks": 3 }, "notCasting": 18809 },
+    { "id": "fire.blast", "spell": "火焰冲击", "target": true, "cd": true },
+    { "id": "fire.scorch.refresh", "spell": "灼烧", "target": true, "config": "scorch", "debuffBelow": { "unit": "target", "id": 22959, "name": "火焰易伤", "stacks": 5, "remain": 5 } },
+    { "id": "fire.ab.buff", "spell": "奥术冲击", "target": true, "config": "abInFire", "buffMissing": { "id": 400573, "name": "奥术冲击" } },
+    { "id": "fire.am.barrage", "spell": "奥术飞弹", "target": true, "notChanneling": true, "buff": { "id": 400589, "name": "飞弹连射" } },
+    { "id": "fire.ball", "spell": "火球术", "target": true, "filler": true },
+    { "id": "fire.scorch.fill", "spell": "灼烧", "target": true, "filler": true }
+  ]
+}

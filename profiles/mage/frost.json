@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "class": "MAGE",
+  "spec": "FROST",
+  "game_build": "1.60.1.70959",
+  "meta": {
+    "name": "冰霜 · 寒冰指冰枪",
+    "source": {
+      "apl": "wowsims/forever@93fde3d ui/specs/mage/dps/apls/frost.apl.json",
+      "notes": "https://tellmenext.cc/zh/forever/mage-frost/",
+      "db": "foreverdb.net build 1.60.1.70959"
+    },
+    "updated_at": "2026-11-20",
+    "confidence": "draft"
+  },
+  "rules": [
+    { "id": "frost.interrupt", "spell": "法术反制", "target": true, "interrupt": true, "config": "interrupt" },
+    { "id": "frost.evo", "spell": "唤醒", "manaPctBelow": 12, "notChanneling": true },
+    { "id": "frost.barrier", "spell": "寒冰护体", "cd": true, "buffMissing": { "id": 1326891, "name": "寒冰护体" } },
+    { "id": "frost.block", "spell": "寒冰屏障", "hpPctBelow": 25, "config": "defensive" },
+    { "id": "frost.lance.fof", "spell": "冰枪术", "target": true, "cd": true, "buff": { "id": 400669, "name": "寒冰指", "minStacks": 1 } },
+    { "id": "frost.coc.aoe", "spell": "冰锥术", "target": true, "cd": true, "aoe": 3, "buff": { "id": 400669, "minStacks": 1 } },
+    { "id": "frost.blizzard.aoe", "spell": "暴风雪", "target": true, "aoe": 3, "manaPctAbove": 15 },
+    { "id": "frost.fireblast.move", "spell": "火焰冲击", "target": true, "cd": true, "moving": true, "config": "fireblast" },
+    { "id": "frost.bolt", "spell": "寒冰箭", "target": true, "filler": true }
+  ]
+}

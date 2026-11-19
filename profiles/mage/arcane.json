@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "class": "MAGE",
+  "spec": "ARCANE",
+  "game_build": "1.60.1.70959",
+  "meta": {
+    "name": "奥术 · 奥冲层数与飞弹连射",
+    "source": {
+      "apl": "wowsims/forever@901c5b8 ui/specs/mage/dps/apls/arcane.apl.json",
+      "notes": "https://tellmenext.cc/zh/forever/mage-arcane/",
+      "db": "foreverdb.net build 1.60.1.70959"
+    },
+    "updated_at": "2026-11-20",
+    "confidence": "draft"
+  },
+  "rules": [
+    { "id": "arcane.interrupt", "spell": "法术反制", "target": true, "interrupt": true, "config": "interrupt" },
+    { "id": "arcane.evo", "spell": "唤醒", "manaPctBelow": 10, "notChanneling": true },
+    { "id": "arcane.block", "spell": "寒冰屏障", "hpPctBelow": 25, "config": "defensive" },
+    { "id": "arcane.ap", "spell": "奥术强化", "cd": true, "burst": true, "manaPctAbove": 40 },
+    { "id": "arcane.pom", "spell": "气定神闲", "cd": true, "burst": true, "alsoReady": 1326082 },
+    { "id": "arcane.am.barrage", "spell": "奥术飞弹", "target": true, "notChanneling": true, "buff": { "id": 400589, "name": "飞弹连射" } },
+    { "id": "arcane.ab.stack", "spell": "奥术冲击", "target": true, "cd": true, "buff": { "id": 400573, "name": "奥术冲击", "maxStacks": 3 } },
+    { "id": "arcane.wrath", "spell": "奥术愤怒", "target": true, "cd": true },
+    { "id": "arcane.blast", "spell": "火焰冲击", "target": true, "cd": true },
+    { "id": "arcane.ab.mana", "spell": "奥术冲击", "target": true, "cd": true, "manaPctAbove": 25 },
+    { "id": "arcane.ae.aoe", "spell": "魔爆术", "target": true, "cd": true, "aoe": 3 },
+    { "id": "arcane.frostbolt.oom", "spell": "寒冰箭", "target": true, "manaPctBelow": 25, "filler": true }
+  ]
+}
