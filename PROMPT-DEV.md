@@ -1,7 +1,7 @@
-# PROMPT-DEV · 正式开发提示词
+# PROMPT-DEV · 正式开发（W0 优先）
 
-> 基线：`main = 0109ba1`。离线 REA 已完成；接下来写可运行代码，不要再写设计文档凑数。
-> 用法：整段复制给开发 AI。
+> 基线：`main = 3c4b745`。本轮只做 **W0**，通过验收后再做 W1；不要一次性铺开。
+> 离线 REA 已完成，数据在 `data/`；当前 Windows 没有 WoW 进程，禁止启动常驻采集/agent。
 
 ---
 
@@ -9,80 +9,75 @@
 
 https://github.com/roywongx/mage-bloom
 
-基线 `main = 0109ba1`。先读：`README.md`、`docs/13`–`docs/19`、`data/README.md`、`PROMPT-NEXT.md`。
+先读：`README.md`、`docs/13`–`docs/19`、`data/README.md`、`PROMPT-NEXT.md`。
 
-## 当前状态
+## 本轮任务：W0 `windows/wowctl/wowctl.py`
 
-- 离线 REA 已完成：`data/` 有 62 个法师技能全 rank、148 技能探针、46 个已学、触发/阈值/控制帧。
-- 6 项只能游戏内验证：寒冰指 400669/400670、火焰易伤真实 ID、冰枪 CD、寒冰护体 buff、天赋 API、CLEU/WGC。
-- Windows 当前没有 WoW 进程；**禁止在无游戏时启动采集/agent**。
-- 没有可运行构建；不要假装已实现。
+只写一个**单次命令、跑完退出**的 Windows 控制 CLI；不要 daemon、不要循环、不要自启。
 
-## 目标（按顺序交付 W0 → W3）
+### 命令
 
-### W0 · `windows/wowctl/wowctl.py`
+```bash
+python wowctl.py status
+python wowctl.py capture out.bmp
+python wowctl.py key NAME [hold_ms]
+python wowctl.py click X Y
+python wowctl.py focus
+```
 
-- 命令：`status` / `capture out.bmp` / `key NAME [ms]` / `click X Y` / `focus`。
-- `status` 输出 JSON：`running/hwnd/title/rect/foreground/dpi`；无 WoW 时 `running=false`。
-- `capture`：WGC 优先，PrintWindow 兜底；检测全黑帧；输出尺寸/哈希。
-- `key/click`：先过 gate（Wow.exe + 窗口 + 前台 + 非最小化）；否则退出码 2。
+### 行为
+
+- `status`：输出 JSON（`running/pid/hwnd/title/rect/client_rect/foreground/dpi/minimized`）。
+  没有 WoW 时 `running=false`，退出码 0。
+- `capture`：找 WoW 主窗口，`PrintWindow(PW_RENDERFULLCONTENT)` 优先，失败退 `BitBlt`；
+  保存 BMP；检测全黑帧；输出 `{ok,path,width,height,mean,sha256}`。无 WoW 退出码 2。
+- `key` / `click`：必须先过 gate（Wow.exe + 窗口 + 前台 + 非最小化），否则退出码 2；
+  用 `SendInput`（scan code），按下/抬起默认 60 ms，可传 `hold_ms`。
+- `focus`：尝试置前；失败如实报告，不重试。
 - 退出码：0 成功、2 无游戏/未前台、3 截图失败、4 参数错误。
-- 不常驻、不自启；单次命令跑完退出。
+- 进程级 DPI awareness（per-monitor v2）。
+- 不创建计划任务、不写自启、不驻留、不轮询。
+- 所有 API 失败都要有 JSON/文本原因，不静默。
 
-### W1 · `addon/MageCtl/`
+### 找窗口
 
-- 128×12、TC01、CRC16、≤4574 B；与 Mac `ctlcodec` 逐字段一致。
-- 最小字段：`gcd`、`mana`、`hp`、`cast{id,remain,channel}`、
-  `buffs[{id,n,rem}]`、`cds{id:remain}`、
-  `target{guid,hp,casting{spellId,castID,remain,interruptible}}`、`valid`。
-- 10 Hz；脱战预建纹理，战斗中只改颜色；CRC 失败即丢帧。
-- 用 `data/spells/mage_spells.json` 解析当前 rank；未学跳过。
+- 进程名 `Wow.exe`（可能有多个，取有主窗口且客户区最大的）。
+- 标题优先 `World of Warcraft`；找不到就按进程 + `IsWindowVisible` + 客户区面积。
+- 排除最小化窗口（`IsIconic`）。
 
-### W2 · `dgx/wow_state.py` + `/assist`
+### 测试（必须给出结果）
 
-- 接收 `/wow/state`，做字段级 freshness；过期/缺失不计算。
-- 模式 `AUTO/PVE/PVP`（先按 target 是否玩家 + 实例类型，滞回）。
-- `/assist` 页面：下一手、反制倒计时、状态灯；无状态帧不轮询。
+1. 无游戏：`status` 返回 `running=false`，退出 0；`capture`/`key`/`click` 退出 2，不产生文件。
+2. 命令跑完 `Get-Process python` 不应留下新进程。
+3. 参数错误退出 4（如 `key` 缺名字、`click` 非数字）。
+4. 有游戏时（如果本机可启动）：`capture` 生成非黑 BMP；`status` 的 hwnd/rect 与窗口一致；
+   `key` 仅在 WoW 前台成功。
+5. 把 `status`/`capture` 的真实输出贴出来。
 
-### W3 · F0 反制
+## 硬约束
 
-- assist 键用 Windows `RegisterHotKey`（游戏不用的键），按下 → 一次 HID/SendInput。
-- 去重：`guid + castID`；动态截止时间：
-  `T_remain > T_state_age + T_input_p99 + T_server + T_safety`。
-- 结果：`SPELL_INTERRUPT` > `UNIT_SPELLCAST_INTERRUPTED(target)` > `inferred`；
-  300 ms 超时只算 `unconfirmed`，不是失败。
-- 指标：attempt / confirmed / inferred / unconfirmed / failed；`T_suggest`/`T_effect`/`T_confirm` 分开。
+1. **无游戏即无进程**：没有 WoW 就不启动、不轮询、不驻留。
+2. 不自动施法/选目标/移动；`key`/`click` 只执行用户/调用方明确要求的一次动作。
+3. 不改游戏文件、不注入进程、不读写内存。
+4. 不写死未验证 ID；数据用 `data/`。
+5. 不引入需要安装的第三方依赖；优先 `ctypes` + 标准库（Pillow/numpy 已存在，可选用）。
+6. 不写文档凑数；代码 + 测试输出优先。
 
-## 硬约束（违反即失败）
+## 交付
 
-1. **无游戏即无进程**：没有 `Wow.exe`/窗口 → 不启动、不轮询、不驻留；退游戏 2 s 内退出。
-2. **无自启**：不创建登录/开机任务；用 `start-wowcap.cmd` 手动启动。
-3. **L2**：没有玩家 assist 键，不发任何游戏输入；一次按键最多一个动作。
-4. **不自动**：不自动选目标、不移动、不连续施法。
-5. **协议不变**：TC01/CRC/128×12/4574 B；只换取帧后端。
-6. **数据质量**：缺失 ≠ 0、过期 ≠ 当前；每字段 `source/observed_at/valid/confidence`。
-7. **热路径确定性**：10 Hz 不调模型；模型只离线。
-8. **未验证 ID 不写死**：用 `data/` 的 `todo` 标记 + 探针。
-9. **不碰**：内存/DLL/封包/反作弊/服务器 API。
-
-## 交付物
-
-- 可运行的 W0/W1/W2/W3 代码与测试；
-- 合成 BMP 的 Windows/Mac 解码一致性结果；
-- 无游戏时的 gate 测试（必须退出，不起进程）；
-- F0 的结果分类与延迟统计；
-- 明确列出仍未验证的 6 项。
+- `windows/wowctl/wowctl.py`
+- `windows/wowctl/README.md`（10 行以内，命令示例）
+- 测试输出（无游戏 gate、参数错误、有游戏截图如果可测）
+- 明确说明：下一步 W1 需要什么（MageCtl 最小字段、TC01 解码）
 
 ## 输出格式
 
 先给 10 行以内的计划，再逐文件写代码；每个文件后说明“解决什么问题、怎么验证”。
-不要空谈架构，不要重复设计文档，不要跳过测试说“完成”。
+不要空谈架构，不要跳过测试说“完成”。
 
-## 禁止
+## 不要做
 
-- 写文档代替代码；
-- 无游戏时启动采集/agent；
-- 自动选目标/移动/连续施法；
-- 重写 TC01；
-- 把模型放进 10 Hz；
-- 状态过期仍发键。
+- 不要写 W1/W2/W3 的代码；
+- 不要实现常驻 agent、FAST LANE、DGX 服务；
+- 不要修改小六月或游戏文件；
+- 不要在无游戏时启动任何进程。
